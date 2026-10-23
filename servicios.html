@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Grupo Heza del Norte</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0d1117; 
+            color: #f1f5f9; 
+        }
+        h1, h2, h3, h4, h5, .font-heading { 
+            font-family: 'Chakra Petch', sans-serif; 
+        }
+        .bg-gradient-heza {
+            background: linear-gradient(135deg, #3230c3 0%, #0e0e38 100%);
+        }
+        .text-gradient-heza {
+            background: linear-gradient(135deg, #6366f1 0%, #3230c3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-tech {
+            background: #161b22;
+            border: 1px solid #21262d;
+            transition: all 0.3s ease;
+        }
+        .card-tech:hover {
+            border-color: #3230c3;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-[#3230c3] selection:text-white">
+
+    <!-- NAVEGACIÓN -->
+    <nav class="w-full bg-[#0d1117]/90 backdrop-blur-md border-b border-[#21262d] sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
+            
+            <!-- LOGO -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Grupo Heza Logo" class="h-10 md:h-12 w-auto object-contain">
+            </a>
+            
+            <!-- Enlaces Escritorio (Activo en 'Servicios') -->
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-xs uppercase tracking-widest font-medium text-slate-400 hover:text-white transition-colors">Inicio</a>
+                <a href="nosotros.html" class="text-xs uppercase tracking-widest font-medium text-slate-400 hover:text-white transition-colors">Nosotros</a>
+                <a href="servicios.html" class="text-xs uppercase tracking-widest font-bold text-indigo-400 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Servicios
+                </a>
+                <a href="contacto.html" class="bg-gradient-heza text-white text-xs uppercase tracking-widest font-bold px-6 py-3 rounded-sm hover:shadow-lg hover:shadow-indigo-500/20 transition-all">Contacto</a>
+            </div>
+            
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL FULLSCREEN -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0d1117] z-[100] translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-[#21262d] pb-6">
+            <span class="font-heading text-sm font-bold tracking-widest text-white uppercase">Grupo Heza</span>
+            <button id="btn-close-menu" class="text-white focus:outline-none" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-8 h-8 stroke-[1.5]"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col gap-8 my-auto">
+            <a href="index.html" class="mobile-link font-heading text-2xl font-light text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Inicio</a>
+            <a href="nosotros.html" class="mobile-link font-heading text-2xl font-light text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Nosotros</a>
+            <a href="servicios.html" class="mobile-link font-heading text-2xl font-bold text-indigo-400 uppercase tracking-widest">Servicios</a>
+            <a href="contacto.html" class="mobile-link font-heading text-2xl font-light text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Contacto</a>
+        </div>
+
+        <div class="border-t border-[#21262d] pt-6 text-slate-400 text-xs space-y-2">
+            <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-indigo-400"></i> 844-455-8554</p>
+            <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i> grupoheza@outlook.com</p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <header class="bg-[#161b22] border-b border-[#21262d] py-20 px-6 lg:px-12">
+        <div class="max-w-screen-2xl mx-auto space-y-4">
+            <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">// CATÁLOGO TÉCNICO</span>
+            <h1 class="font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-wide text-white max-w-4xl leading-tight">
+                Soluciones integrales de mantenimiento, manufactura y soporte mecánico
+            </h1>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: DETALLE DE LAS 5 ÁREAS DE SERVICIO -->
+    <section class="py-24 px-6 lg:px-12 max-w-screen-2xl mx-auto space-y-12">
+        
+        <!-- ÁREA 1: MANTENIMIENTO INDUSTRIAL -->
+        <div class="card-tech p-8 lg:p-12 rounded-lg grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="w-12 h-12 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">
+                    <i data-lucide="wrench" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">01. INDUSTRIAL</span>
+                <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white">Mantenimiento Industrial</h2>
+                <p class="text-slate-300 font-light text-sm leading-relaxed">
+                    Servicios especializados de reparación, mantenimiento preventivo y correctivo para maquinaria y equipos industriales, garantizando la conservación y continuidad operativa de las plantas.
+                </p>
+            </div>
+            <div class="lg:col-span-7 lg:border-l lg:border-[#21262d] lg:pl-12 pt-6 lg:pt-0">
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-indigo-400 mb-6">// ALCANCE OPERATIVO:</h3>
+                <ul class="grid sm:grid-cols-2 gap-4 text-xs font-light text-slate-300">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Mantenimiento preventivo programado</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Diagnóstico y reparación correctiva urgente</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Overhaul y rehabilitación de equipos</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Optimización del rendimiento mecánico</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ÁREA 2: MANUFACTURA DE PRODUCTOS METÁLICOS -->
+        <div class="card-tech p-8 lg:p-12 rounded-lg grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="w-12 h-12 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">
+                    <i data-lucide="anvil" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">02. FABRICACIÓN</span>
+                <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white">Manufactura de Productos Metálicos</h2>
+                <p class="text-slate-300 font-light text-sm leading-relaxed">
+                    Fabricación, corte y ensamblaje de componentes, piezas y estructuras metálicas de alta precisión para cubrir las especificaciones de la industria.
+                </p>
+            </div>
+            <div class="lg:col-span-7 lg:border-l lg:border-[#21262d] lg:pl-12 pt-6 lg:pt-0">
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-indigo-400 mb-6">// ALCANCE DE MANUFACTURA:</h3>
+                <ul class="grid sm:grid-cols-2 gap-4 text-xs font-light text-slate-300">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Fabricación de componentes metálicos a la medida</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Elaboración de refacciones y repuestos</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Maquinado y soldadura especializada</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Estructuras y adaptaciones metálicas</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ÁREA 3: SERVICIOS DE MANUFACTURA -->
+        <div class="card-tech p-8 lg:p-12 rounded-lg grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="w-12 h-12 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">
+                    <i data-lucide="factory" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">03. PROCESOS</span>
+                <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white">Servicios de Manufactura</h2>
+                <p class="text-slate-300 font-light text-sm leading-relaxed">
+                    Desarrollo e integración de procesos manufactureros continuos orientados a satisfacer los requerimientos operativos de diversos sectores productivos.
+                </p>
+            </div>
+            <div class="lg:col-span-7 lg:border-l lg:border-[#21262d] lg:pl-12 pt-6 lg:pt-0">
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-indigo-400 mb-6">// PROCESOS MANUFACTUREROS:</h3>
+                <ul class="grid sm:grid-cols-2 gap-4 text-xs font-light text-slate-300">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Desarrollo de procesos de ensamble</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Acondicionamiento y ajuste de piezas</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Soporte en subensambles industriales</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Control de calidad en líneas productivas</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ÁREA 4: MECÁNICA AUTOMOTRIZ Y CARGA PESADA -->
+        <div class="card-tech p-8 lg:p-12 rounded-lg grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="w-12 h-12 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">
+                    <i data-lucide="truck" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">04. AUTOMOTRIZ & CARGA</span>
+                <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white">Mecánica Automotriz General</h2>
+                <p class="text-slate-300 font-light text-sm leading-relaxed">
+                    Servicios de reparación y mantenimiento mecánico preventivo y correctivo para automóviles particulares, flotillas comerciales y camiones de carga.
+                </p>
+            </div>
+            <div class="lg:col-span-7 lg:border-l lg:border-[#21262d] lg:pl-12 pt-6 lg:pt-0">
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-indigo-400 mb-6">// SERVICIOS MECÁNICOS:</h3>
+                <ul class="grid sm:grid-cols-2 gap-4 text-xs font-light text-slate-300">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Mecánica general preventiva y correctiva</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Mantenimiento a camiones de carga y transporte</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Diagnóstico del sistema motor y transmisión</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Atención técnica a flotillas corporativas</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ÁREA 5: MANTENIMIENTO DE EQUIPOS COMERCIALES -->
+        <div class="card-tech p-8 lg:p-12 rounded-lg grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-5 space-y-4">
+                <div class="w-12 h-12 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-2">
+                    <i data-lucide="store" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">05. SECTOR COMERCIAL</span>
+                <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white">Mantenimiento Comercial</h2>
+                <p class="text-slate-300 font-light text-sm leading-relaxed">
+                    Reparación, ajuste y conservación de maquinaria y equipos utilitarios en establecimientos comerciales y de servicios para asegurar su operación fluida.
+                </p>
+            </div>
+            <div class="lg:col-span-7 lg:border-l lg:border-[#21262d] lg:pl-12 pt-6 lg:pt-0">
+                <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-indigo-400 mb-6">// ATENCIÓN COMERCIAL:</h3>
+                <ul class="grid sm:grid-cols-2 gap-4 text-xs font-light text-slate-300">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Mantenimiento a equipos de uso comercial</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Reparación de fallas mecánicas en sitio</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Planes de revisión preventiva periódica</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>Rehabilitación de equipos de servicio</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- BANNER DE EVALUACIÓN Y CONTACTO -->
+    <section class="py-16 bg-[#161b22] border-y border-[#21262d] px-6 lg:px-12">
+        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-2">
+                <h3 class="font-heading text-2xl font-bold text-white uppercase">¿Requiere una evaluación técnica para sus equipos?</h3>
+                <p class="text-xs font-light text-slate-400">Póngase en contacto con nuestro equipo para cotizar servicios de manufactura o mantenimiento.</p>
+            </div>
+            <a href="contacto.html" class="bg-gradient-heza text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-sm hover:shadow-lg hover:shadow-indigo-500/25 transition-all shrink-0">
+                Solicitar Cotización
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0b0e14] text-white pt-20 pb-10 border-t border-[#21262d]">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 mb-16">
+            
+            <div class="md:col-span-5 space-y-4">
+                <h3 class="font-heading font-extrabold text-lg uppercase tracking-wider text-white">
+                    GRUPO HEZA DEL NORTE
+                </h3>
+                <p class="text-slate-400 text-sm font-light leading-relaxed max-w-md">
+                    Servicios especializados de mantenimiento industrial, manufactura metálica y soporte mecánico técnico en Saltillo, Coahuila.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-indigo-400">Navegación</h4>
+                <ul class="space-y-2.5 text-sm font-light text-slate-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-indigo-400">Contacto Directo</h4>
+                <ul class="space-y-3 text-sm font-light text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400 shrink-0 mt-1"></i>
+                        <span>Luis Echeverría Álvarez #1194 Int. 6-B, Col. Cumbres, Saltillo, Coahuila. C.P. 25270</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>844-455-8554</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>grupoheza@outlook.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 border-t border-[#21262d] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-light">
+            <p>© 2026 Grupo Heza del Norte. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; 
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>

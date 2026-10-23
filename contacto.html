@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Ubicación | Grupo Heza del Norte</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0d1117; 
+            color: #f1f5f9; 
+        }
+        h1, h2, h3, h4, h5, .font-heading { 
+            font-family: 'Chakra Petch', sans-serif; 
+        }
+        .bg-gradient-heza {
+            background: linear-gradient(135deg, #3230c3 0%, #0e0e38 100%);
+        }
+        .card-tech {
+            background: #161b22;
+            border: 1px solid #21262d;
+            transition: all 0.3s ease;
+        }
+        .card-tech:hover {
+            border-color: #3230c3;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-[#3230c3] selection:text-white">
+
+    <!-- NAVEGACIÓN -->
+    <nav class="w-full bg-[#0d1117]/90 backdrop-blur-md border-b border-[#21262d] sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
+            
+            <!-- LOGO -->
+            <a href="index.html" class="flex items-center shrink-0">
+                <img src="assets/logo.png" alt="Grupo Heza Logo" class="h-10 md:h-12 w-auto object-contain">
+            </a>
+            
+            <!-- Enlaces Escritorio (Activo en 'Contacto') -->
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-xs uppercase tracking-widest font-medium text-slate-400 hover:text-white transition-colors">Inicio</a>
+                <a href="nosotros.html" class="text-xs uppercase tracking-widest font-medium text-slate-400 hover:text-white transition-colors">Nosotros</a>
+                <a href="servicios.html" class="text-xs uppercase tracking-widest font-medium text-slate-400 hover:text-white transition-colors">Servicios</a>
+                <a href="contacto.html" class="text-xs uppercase tracking-widest font-bold text-indigo-400 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Contacto
+                </a>
+            </div>
+            
+            <!-- Botón Menú Móvil -->
+            <button id="btn-open-menu" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-7 h-7 stroke-[1.5]"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENÚ MÓVIL FULLSCREEN -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0d1117] z-[100] translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:hidden">
+        <div class="flex justify-between items-center border-b border-[#21262d] pb-6">
+            <span class="font-heading text-sm font-bold tracking-widest text-white uppercase">Grupo Heza</span>
+            <button id="btn-close-menu" class="text-white focus:outline-none" aria-label="Cerrar menú">
+                <i data-lucide="x" class="w-8 h-8 stroke-[1.5]"></i>
+            </button>
+        </div>
+        
+        <div class="flex flex-col gap-8 my-auto">
+            <a href="index.html" class="mobile-link font-heading text-2xl font-light text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Inicio</a>
+            <a href="nosotros.html" class="mobile-link font-heading text-2xl font-light text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Nosotros</a>
+            <a href="servicios.html" class="mobile-link font-heading text-2xl font-light text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Servicios</a>
+            <a href="contacto.html" class="mobile-link font-heading text-2xl font-bold text-indigo-400 uppercase tracking-widest">Contacto</a>
+        </div>
+
+        <div class="border-t border-[#21262d] pt-6 text-slate-400 text-xs space-y-2">
+            <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-indigo-400"></i> 844-455-8554</p>
+            <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i> grupoheza@outlook.com</p>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <header class="bg-[#161b22] border-b border-[#21262d] py-20 px-6 lg:px-12">
+        <div class="max-w-screen-2xl mx-auto space-y-4">
+            <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block">// ATENCIÓN Y UBICACIÓN</span>
+            <h1 class="font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-wide text-white max-w-4xl leading-tight">
+                Ubicación de Instalaciones y Canales Directos
+            </h1>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: DATOS CORPORATIVOS & MAPA INTERACTIVO -->
+    <section class="py-24 px-6 lg:px-12 max-w-screen-2xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- COLUMNA IZQUIERDA: TARJETA DE DATOS TÉCNICOS -->
+            <div class="lg:col-span-5 card-tech p-8 lg:p-12 rounded-lg flex flex-col justify-between space-y-8">
+                
+                <div>
+                    <span class="text-xs font-mono uppercase text-indigo-400 tracking-widest block mb-2">Saltillo, Coahuila</span>
+                    <h2 class="font-heading text-2xl font-bold uppercase text-white mb-3">Oficinas Operativas</h2>
+                    <p class="text-slate-400 font-light leading-relaxed text-xs">
+                        Para coordinar diagnósticos técnicos, soporte en sitio o solicitar evaluaciones de manufactura, comuníquese directamente con nuestro personal especializado.
+                    </p>
+                </div>
+
+                <div class="space-y-6 pt-6 border-t border-[#21262d]">
+                    
+                    <!-- Dirección -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 mt-1">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-white mb-1">Ubicación Física</h4>
+                            <p class="text-xs font-light text-slate-300 leading-relaxed">
+                                Luis Echeverría Álvarez #1194 Int. 6-B<br>
+                                Col. Cumbres<br>
+                                Saltillo, Coahuila. C.P. 25270
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 mt-1">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-white mb-1">Línea Telefónica</h4>
+                            <p class="text-xs font-light text-slate-300">
+                                <a href="tel:8444558554" class="hover:text-indigo-400 font-semibold transition-colors">844-455-8554</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Correo Electrónico -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 mt-1">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-white mb-1">Correo Electrónico</h4>
+                            <p class="text-xs font-light text-slate-300">
+                                <a href="mailto:grupoheza@outlook.com" class="hover:text-indigo-400 font-semibold transition-colors">grupoheza@outlook.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Horario -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-md bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 mt-1">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-white mb-1">Horario Operativo</h4>
+                            <p class="text-xs font-light text-slate-300">
+                                Lunes a Viernes: 8:00 - 18:00 hrs
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botón Directo -->
+                <div class="pt-4">
+                    <a href="mailto:grupoheza@outlook.com" class="w-full inline-flex items-center justify-center gap-3 bg-gradient-heza text-white px-6 py-4 text-xs uppercase tracking-widest font-extrabold rounded-sm hover:shadow-lg hover:shadow-indigo-500/20 transition-all">
+                        Enviar Correo Directo
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- COLUMNA DERECHA: MAPA DE GOOGLE MAPS ESTILIZADO -->
+            <div class="lg:col-span-7 card-tech rounded-lg min-h-[450px] lg:min-h-[100%] overflow-hidden relative">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.8516667127174!2d-100.9815441251546!3d25.443222221692892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868812ab16afaee3%3A0x781a59ebebd46f7f!2sPerif.%20Luis%20Echeverr%C3%ADa%201194%2C%20Cumbres%202da%20Amp%2C%2025270%20Saltillo%2C%20Coah.!5e0!3m2!1ses-419!2smx!4v1792783639988!5m2!1ses-419!2smx" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Grupo Heza del Norte en Saltillo"
+                    class="w-full h-full min-h-[450px] filter grayscale invert contrast-125 opacity-80 hover:opacity-100 hover:grayscale-0 hover:invert-0 transition-all duration-500">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0b0e14] text-white pt-20 pb-10 border-t border-[#21262d]">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 mb-16">
+            
+            <div class="md:col-span-5 space-y-4">
+                <h3 class="font-heading font-extrabold text-lg uppercase tracking-wider text-white">
+                    GRUPO HEZA DEL NORTE
+                </h3>
+                <p class="text-slate-400 text-sm font-light leading-relaxed max-w-md">
+                    Servicios especializados de mantenimiento industrial, manufactura metálica y soporte mecánico técnico en Saltillo, Coahuila.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-indigo-400">Navegación</h4>
+                <ul class="space-y-2.5 text-sm font-light text-slate-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-white transition-colors">Servicios</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-4">
+                <h4 class="font-heading text-xs uppercase tracking-widest font-bold text-indigo-400">Contacto Directo</h4>
+                <ul class="space-y-3 text-sm font-light text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400 shrink-0 mt-1"></i>
+                        <span>Luis Echeverría Álvarez #1194 Int. 6-B, Col. Cumbres, Saltillo, Coahuila. C.P. 25270</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>844-455-8554</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                        <span>grupoheza@outlook.com</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 border-t border-[#21262d] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-light">
+            <p>© 2026 Grupo Heza del Norte. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        lucide.createIcons();
+
+        const btnOpenMenu = document.getElementById('btn-open-menu');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btnOpenMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; 
+        };
+
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+</html>
